@@ -1,0 +1,15 @@
+.text-danger{
+    color: red;
+}
+
+form{
+    .input-group{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.submit{
+    margin-right: 1.5rem;
+
+}

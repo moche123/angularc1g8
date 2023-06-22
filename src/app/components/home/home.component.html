@@ -1,0 +1,28 @@
+<h3>home works!</h3>
+
+<button routerLink="/login">LOGIN</button>
+
+
+<ng-container *ngIf="people.length>0; else loading">
+
+    <div *ngFor="let person of people | order">
+        {{person.age}} - {{person.name}}
+    </div>
+
+    Total: {{people.length}}
+
+
+</ng-container>
+
+<ng-template #loading>
+    ...loading
+</ng-template>
+
+
+<hr><hr>
+
+
+<div *ngFor="let element of getInfoObs$ | async ">
+    {{element.name}}
+    <img [src]="element.image" alt="">
+</div>

@@ -1,0 +1,44 @@
+<h3>login works!</h3>
+
+<button routerLink="/">HOME</button>
+
+<form
+    [formGroup]="myForm"
+    (ngSubmit)="submit()"
+>
+    <!-- <div> -->
+        <div class="input-group">
+            <span>email</span>
+            <input formControlName="email" type="email">
+            <span class="text-danger" *ngIf="fieldIsInvalid('email')">
+                Por favor colocar el email y que sea valido
+            </span>
+        </div>
+
+        <div class="input-group">
+
+            <span>Phone number</span>
+            <input formControlName="phone" type="text">
+            <span class="text-danger" *ngIf="fieldIsInvalid('phone')">
+                Por favor colocar el numero
+            </span>
+        </div>
+
+        <div class="buttons mt-2">
+
+            <button [ngClass]="{
+                'bg-primary': !myForm.invalid,
+                'bg-danger disabled': myForm.invalid
+            }" type="submit" class="submit btn">Submit</button>
+            <button type="button" class="btn btn-secondary ">No submit</button>
+        </div>
+
+    <!-- </div> -->
+    <!-- <div>
+        <span>name</span>
+        <custom-input [type]="type2"></custom-input>
+    </div> -->
+
+    <!-- <custom-button mode="light"></custom-button> -->
+    <!-- <custom-button mode="dark"></custom-button> -->
+</form>
